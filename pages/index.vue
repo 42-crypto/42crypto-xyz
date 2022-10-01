@@ -1,7 +1,17 @@
 <template>
-  <div id="app">
-    <div class="text h-screen w-screen flex justify-center items-center">
-      <p class="text-4xl font-mono font-bold text-black">gm,42Crypto</p>
+  <div id="app" class="font-mono">
+    <div class="h-screen w-screen flex justify-center items-center relative">
+      <p class="text-4xl font-bold text-primary z-10">gm,42Crypto</p>
+    </div>
+    <div class="text flex flex-col w-screen relative items-center pb-20">
+      <h2 class="text-2xl">MEMBERS</h2>
+      <div class="flex flex-wrap mt-10 justify-center gap-10 max-w-5xl">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
     </div>
     <vue-particles
       color="#000000"
@@ -19,22 +29,19 @@
       hoverMode="grab"
       :clickEffect="true"
       clickMode="push"
-      class="h-screen fixed inset-0"
+      class="h-screen fixed inset-0 z-0"
     >
     </vue-particles>
   </div>
 </template>
 
 <script>
+import Card from "../components/card.vue"
+
 export default {
   name: 'IndexPage',
   components: {
+    Card
   },
 }
 </script>
-
-<style scoped>
-#app{
-  background-color: white;
-}
-</style>
