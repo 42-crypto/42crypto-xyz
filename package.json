@@ -23,6 +23,7 @@
     "@nuxtjs/tailwindcss": "^4.2.1",
     "autoprefixer": "^10.4.8",
     "postcss": "^8.4.16",
-    "tailwindcss": "^3.1.8"
+    "tailwindcss": "^3.1.8",
+    "vue-particles": "^1.0.9"
   }
 }
