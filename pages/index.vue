@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="text h-screen w-screen flex justify-center items-center">
-      <p class="text-4xl font-mono font-black">gm,0ch</p>
+      <p class="text-4xl font-mono font-bold text-black">gm,42Crypto</p>
     </div>
     <vue-particles
       color="#000000"
