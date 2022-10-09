@@ -20,11 +20,7 @@
     <div class="text flex flex-col w-screen relative items-center pb-20">
       <h2 class="text-2xl">MEMBERS</h2>
       <div class="flex flex-wrap mt-10 justify-center gap-10 max-w-5xl">
-        <Card :theme="theme"/>
-        <Card :theme="theme"/>
-        <Card :theme="theme"/>
-        <Card :theme="theme"/>
-        <Card :theme="theme"/>
+        <Card :theme="theme" v-for="(member, index) in members" :key="index" :member="member" :works="filterWorksByMember(member.Name.title == 0 ? '' : member.Name.title[0].plain_text)"/>
       </div>
     </div>
     <vue-particles
@@ -59,7 +55,8 @@ export default {
   },
   data: () => ({
     theme: "black",
-    members: []
+    members: [],
+    works: []
   }),
   async mounted() {
     if (localStorage.theme === 'black' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -69,6 +66,12 @@ export default {
       document.documentElement.setAttribute("data-theme", 'lofi');
       this.theme = "lofi";
     }
+
+    const data = await fetch(window.location.href + "server-middleware-notion");
+    const json = await data.json();
+    console.log(json);
+    this.members = json.members;
+    this.works = json.works;
   },
   methods: {
     toggleTheme() {
@@ -81,6 +84,14 @@ export default {
         localStorage.theme = 'black';
         this.theme = "black";
       }
+    },
+    filterWorksByMember(name) {
+      if(name == ""){return;}
+      const filteredWorks = this.works.filter(work => {
+        if(work.member.rich_text.length == 0){return;}
+        return work.member.rich_text[0].plain_text == name;
+      })
+      return filteredWorks;
     }
   }
 }
