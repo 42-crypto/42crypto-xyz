@@ -20,11 +20,11 @@
     <div class="text flex flex-col w-screen relative items-center pb-20">
       <h2 class="text-2xl">MEMBERS</h2>
       <div class="flex flex-wrap mt-10 justify-center gap-10 max-w-5xl">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card :theme="theme"/>
+        <Card :theme="theme"/>
+        <Card :theme="theme"/>
+        <Card :theme="theme"/>
+        <Card :theme="theme"/>
       </div>
     </div>
     <vue-particles
@@ -71,7 +71,6 @@ export default {
   },
   methods: {
     toggleTheme() {
-      console.log(document.documentElement.getAttribute('data-theme'));
       if(document.documentElement.getAttribute('data-theme') == 'black'){
         document.documentElement.setAttribute("data-theme", 'lofi');
         localStorage.theme = 'lofi';
