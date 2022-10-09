@@ -59,8 +59,9 @@ export default {
   },
   data: () => ({
     theme: "black",
+    members: []
   }),
-  mounted() {
+  async mounted() {
     if (localStorage.theme === 'black' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.setAttribute("data-theme", 'black');
       this.theme = "black";
@@ -68,6 +69,16 @@ export default {
       document.documentElement.setAttribute("data-theme", 'lofi');
       this.theme = "lofi";
     }
+
+    const data = await fetch('https://api.notion.com/v1/databases/f227cb3970aa47718bd5461296a2c1db', {
+      headers: {
+        'Authorization': `Bearer: ${process.env.NOTION_KEY}`,
+        'Notion-Version': '2022-06-28'
+      }
+    })
+    console.log(data);
+    // const json = await data.json();
+    // console.log(json);
   },
   methods: {
     toggleTheme() {
