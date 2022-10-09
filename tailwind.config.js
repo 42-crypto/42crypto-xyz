@@ -7,7 +7,6 @@ module.exports = {
     "./nuxt.config.{js,ts}",
   ],
   purge: [],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
   },
@@ -23,6 +22,5 @@ module.exports = {
     logs: true,
     rtl: false,
     prefix: "",
-    darkTheme: false,
   },
 }
