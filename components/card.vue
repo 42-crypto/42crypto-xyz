@@ -6,11 +6,13 @@
       </figure>
       <div class="card-body items-start text-left gap-0">
         <h2 class="card-title text-xl font-bold mb-0">chillx2land</h2>
-        <p class="text-xs break-all mt-0">0x2c39Fb1F67994fF66b617A1DDffC70075fEAb535</p>
+        <a href="https://debank.com/profile/0x2c39fb1f67994ff66b617a1ddffc70075feab535" target="_blank" v-bind:class="[ theme == 'black' ? 'underline hover:text-white text-xs break-all mt-0' : 'underline text-xs break-all mt-0']">
+          0x2c39Fb1F67994fF66b617A1DDffC70075fEAb535
+        </a>
         <div>
           <p class="mt-2">works:</p>
           <div class="break-words">
-            <a href="https://newn.co" v-bind:class="[ theme == 'black' ? 'underline hover:text-white' : 'underline']">newn.co</a> / <a href="https://crftr.xyz" v-bind:class="[ theme == 'black' ? 'underline hover:text-white' : 'underline']">crftr</a> / <a href="https://0ch.io" v-bind:class="[ theme == 'black' ? 'underline hover:text-white' : 'underline']">0ch.io</a> / <a>NFT Admin</a>
+            <a href="https://newn.co" target="_blank" v-bind:class="[ theme == 'black' ? 'underline hover:text-white' : 'underline']">newn.co</a> / <a href="https://crftr.xyz" v-bind:class="[ theme == 'black' ? 'underline hover:text-white' : 'underline']">crftr</a> / <a href="https://0ch.io" v-bind:class="[ theme == 'black' ? 'underline hover:text-white' : 'underline']">0ch.io</a> / <a>NFT Admin</a>
           </div>
         </div>
         <a class="m-auto" href="https://twitter.com/chillx2land" target="_blank">
