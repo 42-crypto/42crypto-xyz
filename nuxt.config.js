@@ -61,5 +61,9 @@ export default {
         autoprefixer: {},
       },
     },
-  }
+  },
+
+  serverMiddleware: [
+    { path: '/server-middleware-notion', handler: '~/serverMiddleware/notion' }
+  ],
 }
